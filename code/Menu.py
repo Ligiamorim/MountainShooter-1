@@ -14,6 +14,10 @@ class Menu:
         self.surf = pygame.image.load('./asset/MenuBg.png').convert_alpha()
         self.rect = self.surf.get_rect(left=0, top=0)
 
+        self.nome_completo = "Ligia Evelyn Pereira Amorim"
+        self.ru_aluno = "4283008"
+
+
     def run(self):
         menu_option = 0
         pygame.mixer_music.load('./asset/Menu.mp3')
@@ -23,6 +27,10 @@ class Menu:
             self.window.blit(source=self.surf, dest=self.rect)
             self.menu_text(50, "Mountain", C_ORANGE, ((WIN_WIDTH / 2), 70))
             self.menu_text(50, "Shooter", C_ORANGE, ((WIN_WIDTH / 2), 120))
+
+             # Nome Completo e RU do Aluno
+            self.menu_text(25, f"Nome: {self.nome_completo}", C_ORANGE, ((WIN_WIDTH / 2), 145))
+            self.menu_text(25, f"RU: {self.ru_aluno}", C_ORANGE, ((WIN_WIDTH / 2), 160))
 
             for i in range(len(MENU_OPTION)):
                 if i == menu_option:
